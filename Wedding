@@ -1,0 +1,73 @@
+# Импортируем модуль для работы с файлами
+import os
+
+# Определяем данные для приглашения
+bride_name = "Nodira"
+groom_name = "Lutfullo"
+wedding_date = "16.08.2024"
+wedding_time = "19:00"
+wedding_location = "Toshkent, Sag'bon, Joziba restoran"
+
+# Создаем HTML-контент
+html_content = f"""
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To'y Taklifnomasi</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }}
+
+        .invitation-container {{
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }}
+
+        h1 {{
+            color: #d9534f;
+        }}
+
+        h2 {{
+            color: #5bc0de;
+        }}
+
+        .date-time {{
+            font-size: 18px;
+            margin: 20px 0;
+        }}
+
+        .location {{
+            font-size: 18px;
+            margin: 10px 0;
+        }}
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <h1>To'y Taklifnomasi</h1>
+        <h2>{groom_name} & {bride_name}</h2>
+        <p class="date-time">Sana: {wedding_date}</p>
+        <p class="date-time">Vaqt: {wedding_time}</p>
+        <p class="location">Joy: {wedding_location}</p>
+        <p>Biz sizni ushbu muhim kunda ko'rishdan mamnun bo'lamiz.</p>
+    </div>
+</body>
+</html>
+"""
+
+# Записываем HTML-контент в файл
+with open("wedding_invitation.html", "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+print("HTML taklifnoma yaratildi va 'wedding_invitation.html' nomi bilan saqlandi.")
